@@ -20,7 +20,7 @@ class chat_bot():
     sys_prompt = f"""You are an intelligent generative search assistant. As an expert trained on diverse knowledge base, \
                         provide to the best of your ability response to my query using the most recent information.
                         
-                        Be short and concise."""
+                        Make sure to summarize your answer to be short and concise."""
                         
     def get_response(self, message, model="llama-3.1-70b-versatile", temperature=0):
         try:             
