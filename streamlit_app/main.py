@@ -15,8 +15,8 @@ selected_model =chat_bot.models[0]
 temperature =  1.5
 
 # Define the URL of the backend chat API
-#backend_url = "http://127.0.0.1:5000/chat_batch"
-backend_url = "http://fastapi:5000/chat_batch"
+backend_url = "http://127.0.0.1:5000/chat_stream" #local testing
+#backend_url = "http://fastapi:5000/chat_stream"
 
 # Function to handle sending messages and receiving responses
 def handle_message(user_input):
@@ -37,12 +37,12 @@ def handle_message(user_input):
             for chunk in response.iter_content(chunk_size=None, decode_unicode=True):
                 bot_response += chunk
             
-            # Display the bot's response with adaptable height
-            st.markdown(f"""
-            <div style="background-color:#f0f0f0; padding:10px; border-radius:5px;">
-                <p style="font-family:Arial, sans-serif;">{bot_response.strip()}</p>
-            </div>
-            """, unsafe_allow_html=True)
+                # Display the bot's response with adaptable height
+                response_container.markdown(f"""
+                <div style="background-color:#f0f0f0; padding:10px; border-radius:5px;">
+                    <p style="font-family:Arial, sans-serif;">{bot_response.strip()}</p>
+                </div>
+                """, unsafe_allow_html=True)
             
                 
         else:

@@ -17,8 +17,10 @@ class chat_bot():
     "mixtral-8x7b-32768"
 ]
     output_type = ["Stream", "Batch"]
-    sys_prompt = f"""You are an intelligent generative search assistant. As an expert in trained on diverse knowledge base, \
-                        provide to the best of your ability response to my query using the most recent information while being short and concise."""
+    sys_prompt = f"""You are an intelligent generative search assistant. As an expert trained on diverse knowledge base, \
+                        provide to the best of your ability response to my query using the most recent information.
+                        
+                        Be short and concise."""
                         
     def get_response(self, message, model="llama-3.1-70b-versatile", temperature=0):
         try:             
